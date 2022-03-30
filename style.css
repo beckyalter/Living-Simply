@@ -25,7 +25,7 @@
                          "footer footer footer footer";
     grid-template-rows: repeat (4, 1fr);
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 10px;
+    grid-gap: 10px;
 }
 
 /* Typography */
@@ -34,20 +34,26 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-h1 {
+.site-title {
     font-family: 'Poppins', sans-serif;
     color: var(--primary);
     font-weight: 700;
     font-size: 2.5rem;
-    line-height: 4rem;
+    line-height: 3rem;
 }
 
 .subtitle {
     font-family: 'Poppins', sans-serif;
     color: var(--dark);
+    font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark);
 }
 
 
@@ -110,7 +116,7 @@ ul a:hover {
     color: magenta;
 }
 
-/* Design */
+/* Grid-area Layout */
 
 header {
     background-color: var(--grey);
@@ -120,7 +126,9 @@ header {
 main {
     background-color: var(--white);
     grid-area: main;
+    max-width: 100%;
 }
+
 
 .sidebar {
     background-color: var(--dark);
@@ -136,3 +144,20 @@ footer {
     background-color: var(--grey);
     grid-area: footer;
 }
+
+/* Design */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+}
+
+.title, .subtitle {
+    text-align: center;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
