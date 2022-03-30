@@ -6,21 +6,45 @@
 
 /* General */
 
+:root {
+    --primary: magenta;
+    --dark: #333;
+    --white: whitesmoke;
+    --grey: rgb(192, 189, 189);
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+.wrapper-container {
+    display: grid;
+    max-width: 900px;
+    position: relative;
+    margin: auto;
+    grid-template-areas: "header header header header"
+                         "main main main sidebar"
+                         "article article article article"
+                         "footer footer footer footer";
+    grid-template-rows: repeat (4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+}
+
+/* Typography */
+
 body {
     font-family: 'Poppins', sans-serif;
 }
 
 h1 {
     font-family: 'Poppins', sans-serif;
-    color: magenta;
+    color: var(--primary);
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 4rem;
 }
 
 .subtitle {
     font-family: 'Poppins', sans-serif;
-    color: grey;
+    color: var(--dark);
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
@@ -29,7 +53,7 @@ h1 {
 
 ul a {
     font-family: 'Poppins', sans-serif;
-    color: grey;
+    color: var(--dark);
     font-weight: 400;
     text-transform: uppercase;
     font-size: 1.3rem;
@@ -61,13 +85,13 @@ nav ul{
 @media (max-width: 500px) {
     nav ul {
         flex-direction: column;
-        margin: 2em 0;
+        margin: 1em 0;
     }
 }
 
 nav li {
     margin-left: 1.5em;
-    padding: 1em 0;
+    padding: .5em 0;
 }
 
 @media (max-width: 500px) {
@@ -86,4 +110,29 @@ ul a:hover {
     color: magenta;
 }
 
+/* Design */
 
+header {
+    background-color: var(--grey);
+    grid-area: header;
+}
+
+main {
+    background-color: var(--white);
+    grid-area: main;
+}
+
+.sidebar {
+    background-color: var(--dark);
+    grid-area: sidebar;
+}
+
+article {
+    background-color: var(--white);
+    grid-area: article;
+}
+
+footer {
+    background-color: var(--grey);
+    grid-area: footer;
+}
